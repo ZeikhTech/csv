@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="stylesheet" href="/public/css/style.css">
+    <title>CSV</title>
+  </head>
+  <body">
+    <form id="uploadForm" action="/csv" method="POST" enctype="multipart/form-data">
+     <div> 
+       <label for="formFile" class="form-label">Upload CSV File</label>
+    </div>
+      <input class="form-control" name="myFile" type="file" id="formFile" accept=".csv" />
+      <div>
+      <input type="submit" value="Read"  name="Submit"/>
+      <span id = "status"></span>
+      </div>
+    </form>
+
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+
+      $(document).ready(function() {
+       
+      $('#uploadForm').submit(function() {
+      $("#status").empty().text("File is uploading...");
+      $(this).ajaxSubmit({
+      error: function(xhr) {
+      status('Error: ' + xhr.status);
+      },
+       
+      
+      success: function(response) {
+      $("#status").empty().text(response);
+      console.log(response);
+      }
+      });
+      //Code to disable the page refresh.
+      return false;
+      });
+      });
+
+      </script>
+  </body>
+</html>

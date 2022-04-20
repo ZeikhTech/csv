@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/css/style.css" />
+    <title>CSV</title>
+  </head>
+  <body>
+    <%if(result){%>
+    <div>
+      <table style="width: auto">
+        <thead>
+          <tr>
+            <th>S.no</th>
+            <th style="padding-right: 1em">FirstName</th>
+            <th style="padding-right: 1em">LastName</th>
+            <th style="padding-right: 2em; padding-left: 2em">Patient</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody style="overflow-x: scroll; height: 350px" class="table-bordered">
+          <%for(var i=0;i< result.length;i++){%>
+          <tr class="text-center">
+            <td><%= i+1%></td>
+            <td style="padding-right: 1em"><%= result[i].firstName%></td>
+            <td style="padding-left: 1em"><%= result[i].lastName%></td>
+            <td style="padding-left: 1em"><%= result[i].patient%></td>
+            <td style="padding-left: 1em"><%= result[i].phone%></td>
+            <td style="padding-left: 1em"><%= result[i].address%></td>
+            <td style="padding-left: 1.2em"><%= result[i].location%></td>
+          </tr>
+          <%}%>
+        </tbody>
+      </table>
+    </div>
+    <%}%>
+    <br />
+  </body>
+</html>

@@ -1,0 +1,32 @@
+body {
+  background-color: #d8e3e7;
+  font-size: 1.875em;
+  align-items: center;
+}
+form {
+  margin: 2em;
+}
+input {
+  border: 2px solid #1572a1;
+  border-radius: 3px;
+  font-size: medium;
+  color: white;
+}
+th {
+  color: #1572a1;
+}
+input[type="submit"] {
+  background-color: #1572a1;
+  color: white;
+}
+
+label {
+  color: #1572a1;
+}
+
+input[type="file"]::file-selector-button {
+  padding: 0.2em 0.4em;
+  background-color: #1572a1;
+  border: 0.5px solid #1572a1;
+  color: white;
+}
